@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from typing import List
 from xmlrpc.client import DateTime
 
-from Algoritmos.Models.Transaccion import Transaccion
+from .Transaccion import Transaccion
 
 
 @dataclass
