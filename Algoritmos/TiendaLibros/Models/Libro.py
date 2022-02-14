@@ -1,16 +1,27 @@
 from dataclasses import dataclass
 from typing import List
-from xmlrpc.client import DateTime
-
 from .Transaccion import Transaccion
 
 
 @dataclass
 class Libro:
-    titulo: str
-    cantidad: int
-    precio_venta : float
+    """Modelo para el libro.
+    """
+    _isbn: str
+    _titulo: str
+    _cantidad: int
+    precio_venta: float
     precion_compra: float
-    transaccion : List[Transaccion]
-    fecha_publicacion : DateTime
-    
+    transaccion: List[Transaccion]
+
+    @property
+    def isbn(self):
+        return self._isbn
+
+    @property
+    def cantidad(self):
+        return self._cantidad
+
+    @cantidad.setter
+    def cantidad(self, value: int):
+        self._cantidad = value if value >= 0 else self._cantidad

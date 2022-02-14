@@ -1,9 +1,11 @@
 from dataclasses import dataclass
-from typing import List
-from Models.Libro import Libro
+from typing import Dict, List
+from .Libro import Libro
 
 
 @dataclass
 class Tienda:
+    """Modelo para la tienda.
+    """
     flujo_caja: float
-    catalogo: List[Libro]
+    catalogo: Dict[str, Libro]
